@@ -1,7 +1,7 @@
 import { FilterSearch } from '../components/FilterSearch';
 import { InputSearch } from '../components/InputSearch';
 import { InputSelect } from '../components/InputSelect';
-import { Togglebtn } from '../components/Togglebtn';
+import { Table } from '../components/Table';
 
 export const MainContent = () => {
 	return (
@@ -15,25 +15,7 @@ export const MainContent = () => {
 					</FilterSearch>
 				</div>
 
-				<table>
-					<thead>
-						<tr>
-							<th>prueba</th>
-							<th>par ver </th>
-							<th>si es aso</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>dasdasd</td>
-							<td>⭐⭐⭐⭐⭐</td>
-							<td>
-								<Togglebtn></Togglebtn>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<Table></Table>
 			</section>
 		</main>
 	);

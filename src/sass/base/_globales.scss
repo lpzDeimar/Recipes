@@ -20,7 +20,7 @@ html {
 	box-sizing: inherit;
 }
 *::selection {
-	background-color: $primario;
+	background-color: $secundario;
 	color: $blanco;
 }
 body {
@@ -35,7 +35,7 @@ body {
 }
 p {
 	font-size: 1.8rem;
-	color: $gris;
+	color: $primario;
 }
 .contenedor {
 	max-width: 120rem;
@@ -56,13 +56,13 @@ h3 {
 	color: $primario;
 }
 h1 {
-	font-size: 3.8rem;
+	font-size: 3.2rem;
 }
 h2 {
-	font-size: 3.5rem;
+	font-size: 3rem;
 }
 h3 {
-	font-size: 3rem;
+	font-size: 2.8rem;
 }
 ul {
 	list-style: none;

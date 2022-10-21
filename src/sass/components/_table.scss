@@ -1,0 +1,40 @@
+.table {
+	margin-top: 2.4rem;
+	max-height: 60vh;
+	overflow-y: auto;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+
+		thead {
+			th {
+				z-index: 1;
+				position: sticky;
+				top: 0;
+				background-color: $blanco;
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: $inactive;
+				text-align: left;
+				padding: 1.6rem 0.8rem;
+			}
+			tr {
+				border-bottom: 0.1rem solid $inactive;
+			}
+		}
+
+		tbody {
+			td {
+				color: $primario;
+				font-size: 1.4rem;
+				padding: 0.8rem;
+				border-bottom: 0.1rem solid $blanco4;
+			}
+		}
+	}
+
+	/* width od scroll*/
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
