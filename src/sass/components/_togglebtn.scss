@@ -27,8 +27,8 @@
 		content: '';
 		height: 1.8rem;
 		width: 1.8rem;
-		left: 4px;
-		bottom: 3.1px;
+		left: 0.4rem;
+		bottom: 0.3rem;
 		background-color: white;
 		-webkit-transition: 0.4s;
 		transition: 0.4s ease-in-out;
@@ -53,7 +53,7 @@ input {
 
 .slider {
 	&.round {
-		border-radius: 34px;
+		border-radius: 3.4rem;
 		background-color: $inactive;
 		&::before {
 			border-radius: 50%;

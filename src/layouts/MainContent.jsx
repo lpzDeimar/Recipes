@@ -1,3 +1,4 @@
+import { FilterSearch } from '../components/FilterSearch';
 import { InputSearch } from '../components/InputSearch';
 import { InputSelect } from '../components/InputSelect';
 import { Togglebtn } from '../components/Togglebtn';
@@ -8,9 +9,10 @@ export const MainContent = () => {
 			<section>
 				<div>
 					<h1>Kitchen Recipes</h1>
-
-					<InputSearch></InputSearch>
-					<InputSelect></InputSelect>
+					<FilterSearch>
+						<InputSearch />
+						<InputSelect />
+					</FilterSearch>
 				</div>
 
 				<table>
