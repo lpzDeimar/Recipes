@@ -1,0 +1,19 @@
+.inputSearch {
+	display: flex;
+	column-gap: 1rem;
+	background-color: $blanco2;
+	padding: 1.2rem;
+	max-width: 50rem;
+	border-radius: 1.6rem;
+	i {
+		img {
+			width: 2.4rem;
+		}
+	}
+	input {
+		border: none;
+		width: 100%;
+		background-color: transparent;
+		outline: none;
+	}
+}

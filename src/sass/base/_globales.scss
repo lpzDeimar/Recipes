@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('./src/assets/fonts/poppins-v20-latin-300.woff') format('woff'),
+		url('./src/assets/fonts/poppins-v20-latin-300.woff2') format('woff2'),
+		url('./src/assets/fonts/poppins-v20-latin-500.woff') format('woff'),
+		url('./src/assets/fonts/poppins-v20-latin-500.woff2') format('woff2'),
+		url('./src/assets/fonts/poppins-v20-latin-600.woff') format('woff'),
+		url('./src/assets/fonts/poppins-v20-latin-600.woff2') format('woff2');
+	font-style: normal;
+}
+
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;

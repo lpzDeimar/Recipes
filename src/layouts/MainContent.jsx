@@ -1,3 +1,5 @@
+import { InputSearch } from '../components/InputSearch';
+import { InputSelect } from '../components/InputSelect';
 import { Togglebtn } from '../components/Togglebtn';
 
 export const MainContent = () => {
@@ -6,17 +8,9 @@ export const MainContent = () => {
 			<section>
 				<div>
 					<h1>Kitchen Recipes</h1>
-					<div>
-						<i>
-							<img src='./src/assets/svg/search.svg' alt='' />
-						</i>
-						<input type='text' />
-					</div>
-					<select name='' id=''>
-						<option value=''>All</option>
-						<option value=''>Activge</option>
-						<option value=''>Inactive</option>
-					</select>
+
+					<InputSearch></InputSearch>
+					<InputSelect></InputSelect>
 				</div>
 
 				<table>
