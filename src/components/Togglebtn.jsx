@@ -8,7 +8,7 @@ export const Togglebtn = () => {
 			<input
 				type='checkbox'
 				checked={check}
-				onClick={() => {
+				onChange={() => {
 					setCheck(!check);
 				}}
 			/>

@@ -1,4 +1,5 @@
 import { FormRecipe } from './components/FormRecipe';
+import { Modal } from './components/Modal';
 import { Barimg } from './layouts/BarImg';
 import { Header } from './layouts/Header';
 import { Layout } from './layouts/Layout';
@@ -13,8 +14,9 @@ export const App = () => {
 				<Barimg />
 				<MainContent />
 			</Layout>
-
-			<FormRecipe />
+			<Modal>
+				<FormRecipe />
+			</Modal>
 		</>
 	);
 };
