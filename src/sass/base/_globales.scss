@@ -87,15 +87,15 @@ strong {
 
 /* width */
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 10px white;
+	box-shadow: inset 0 0 5px white;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: $primario;
+	background: $secundarioOsc;
 }

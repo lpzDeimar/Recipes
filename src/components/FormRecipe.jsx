@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Togglebtn } from './Togglebtn';
 
 const autoHeight = event => {
@@ -8,10 +10,22 @@ const autoHeight = event => {
 		: (event.target.style.height = `${event.target.scrollHeight}px`);
 };
 
-export const FormRecipe = () => {
+export const FormRecipe = props => {
+	const modal = useRef(null);
+
+	const onClickButton = event => {
+		if (event.target === modal.current) {
+			props.setViModal(prevState => !prevState);
+		}
+	};
+
 	return (
-		<section className='formRecipe'>
-			<article>
+		<section className='formRecipe' onClick={onClickButton} ref={modal}>
+			<article
+				data-aos='fade-left'
+				data-aos-anchor='#example-anchor'
+				data-aos-offset='500'
+				data-aos-duration='500'>
 				<h2>New recipe</h2>
 
 				<p>Recipe name</p>
@@ -83,4 +97,8 @@ export const FormRecipe = () => {
 			</article>
 		</section>
 	);
+};
+
+FormRecipe.propTypes = {
+	setViModal: PropTypes.func.isRequired,
 };

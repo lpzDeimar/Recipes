@@ -9,10 +9,35 @@
 	z-index: 10;
 	display: flex;
 	justify-content: flex-end;
-	display: none;
+	// display: none;
+
+	animation: aparency 400ms;
+
+	@keyframes aparency {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	overflow-x: hidden;
+
 	article {
 		background-color: $blanco;
 		padding: 2.4rem;
+
+		// animation: flow 400ms;
+		// animation-delay: 600ms;
+		// @keyframes flow {
+		// 	0% {
+		// 		transform: translateX(100%);
+		// 	}
+		// 	100% {
+		// 		opacity: 1;
+		// 		transform: translateX(0);
+		// 	}
+		// }
 		@include tabletinvert {
 			width: 100%;
 		}
