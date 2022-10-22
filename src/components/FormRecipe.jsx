@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Togglebtn } from './Togglebtn';
+import { ListIngredients } from './ListIngredients';
 
 const autoHeight = event => {
 	event.keyCode === 8
@@ -25,6 +26,7 @@ export const FormRecipe = props => {
 				data-aos='fade-left'
 				data-aos-anchor='#example-anchor'
 				data-aos-offset='500'
+				data-aos-delay='300'
 				data-aos-duration='500'>
 				<h2>New recipe</h2>
 
@@ -37,30 +39,8 @@ export const FormRecipe = props => {
 					/>
 				</div>
 
-				<p>Ingredients</p>
+				<ListIngredients />
 
-				<fieldset className='formRecipe__group--ingrement'>
-					<label>
-						1 <input type='text' placeholder='Type ingredient' />
-						<button type='button'>
-							<img src='./src/assets/svg/trash.svg' alt='' />
-						</button>
-					</label>
-
-					<label htmlFor=''>
-						2 <input type='text' placeholder='Type ingredient' />
-						<button type='button'>
-							<img src='./src/assets/svg/trash.svg' alt='' />
-						</button>
-					</label>
-
-					<label htmlFor=''>
-						2 <input type='text' placeholder='Type ingredient' />
-						<button type='button'>
-							<img src='./src/assets/svg/add.svg' alt='' />
-						</button>
-					</label>
-				</fieldset>
 				<p>Preparation</p>
 				<div className='formRecipe__group'>
 					<label htmlFor=''>Intructions*</label>
@@ -90,6 +70,7 @@ export const FormRecipe = props => {
 					<input type='radio' name='start' />
 					<label htmlFor=''>5</label>
 				</fieldset>
+
 				<p>Cooked before</p>
 				<Togglebtn />
 

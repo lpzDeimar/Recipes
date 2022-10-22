@@ -9,7 +9,6 @@
 	z-index: 10;
 	display: flex;
 	justify-content: flex-end;
-	// display: none;
 
 	animation: aparency 400ms;
 
@@ -26,18 +25,6 @@
 	article {
 		background-color: $blanco;
 		padding: 2.4rem;
-
-		// animation: flow 400ms;
-		// animation-delay: 600ms;
-		// @keyframes flow {
-		// 	0% {
-		// 		transform: translateX(100%);
-		// 	}
-		// 	100% {
-		// 		opacity: 1;
-		// 		transform: translateX(0);
-		// 	}
-		// }
 		@include tabletinvert {
 			width: 100%;
 		}
@@ -85,43 +72,6 @@
 			flex-direction: column;
 			@include tablet {
 				max-width: 41rem;
-			}
-		}
-
-		.formRecipe__group--ingrement {
-			margin-top: -2rem;
-			display: flex;
-			flex-direction: column;
-			row-gap: 2rem;
-			border: none;
-			padding: 1.6rem 0.8rem 0 0.8rem;
-			border-radius: 0.4rem;
-
-			label {
-				display: flex;
-				align-items: center;
-			}
-
-			input {
-				margin-left: 0.8rem;
-				border: $primario2 solid 0.1rem;
-				padding: 0.8rem;
-				border-radius: 0.4rem;
-			}
-			button {
-				display: flex;
-				align-items: center;
-				border: none;
-				background-color: transparent;
-				padding: 0;
-				&:hover {
-					cursor: pointer;
-				}
-			}
-			img {
-				margin-left: 2rem;
-				height: 2.4rem;
-				width: 2.4rem;
 			}
 		}
 

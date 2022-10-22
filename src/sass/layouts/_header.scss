@@ -1,10 +1,11 @@
 .header {
 	height: 8rem;
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	background-color: $blanco;
 	display: flex;
 	z-index: 9;
+	box-shadow: 0px 0px 5px 0px rgba(123, 146, 165, 0.1);
 	img {
 		max-height: 4.8rem;
 		margin: 1.6rem auto 1.6rem 2.4rem;
