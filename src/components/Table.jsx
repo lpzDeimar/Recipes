@@ -14,111 +14,16 @@ export const Table = () => {
 
 				<tbody>
 					<tr>
-						<td>Nombre de una receta a mostrar</td>
+						<td>
+							Nombre de una receta a mostrar Nombre de una receta a mostrar
+							Nombre de una receta a mostrar Nombre de una receta a mostrar
+						</td>
 						<td>⭐⭐⭐⭐⭐</td>
 						<td>
 							<Togglebtn></Togglebtn>
 						</td>
 					</tr>
 
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
 					<tr>
 						<td>Nombre de una receta a mostrar</td>
 						<td>⭐⭐⭐⭐⭐</td>

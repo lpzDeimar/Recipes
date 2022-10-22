@@ -1,6 +1,6 @@
 .table {
 	margin-top: 2.4rem;
-	max-height: 60vh;
+	max-height: 58vh;
 	overflow-y: auto;
 	table {
 		width: 100%;
@@ -35,6 +35,6 @@
 
 	/* width od scroll*/
 	&::-webkit-scrollbar {
-		display: none;
+		width: 0;
 	}
 }

@@ -1,0 +1,141 @@
+.formRecipe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: inherit;
+	min-height: 100vh;
+	background-color: rgba(30, 54, 70, 0.3);
+	z-index: 10;
+	display: flex;
+	justify-content: flex-end;
+	// display: none;
+	article {
+		background-color: $blanco;
+		padding: 2.4rem;
+		@include tabletinvert {
+			width: 100%;
+		}
+
+		h2 {
+			font-size: 2.4rem;
+		}
+		p {
+			margin-top: 4.2rem;
+			font-size: 1.4rem;
+			font-weight: 600;
+			// line-height: 2.4rem;
+		}
+
+		input {
+			background-color: transparent;
+			border: none;
+			outline: none;
+			font-size: 1.4rem;
+			@include tabletinvert {
+				width: 100%;
+			}
+		}
+		label {
+			font-size: 1.2rem;
+			outline: none;
+		}
+		textarea {
+			font-size: 1.4rem;
+			border: none;
+			resize: none;
+			outline: none;
+			overflow: auto;
+			transform: 400ms;
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+		}
+
+		.formRecipe__group {
+			border: $primario2 solid 0.1rem;
+			padding: 0.8rem;
+			border-radius: 0.4rem;
+			display: flex;
+			flex-direction: column;
+			@include tablet {
+				max-width: 41rem;
+			}
+		}
+
+		.formRecipe__group--ingrement {
+			margin-top: -2rem;
+			display: flex;
+			flex-direction: column;
+			row-gap: 2rem;
+			border: none;
+			padding: 1.6rem 0.8rem 0 0.8rem;
+			border-radius: 0.4rem;
+
+			label {
+				display: flex;
+				align-items: center;
+			}
+
+			input {
+				margin-left: 0.8rem;
+				border: $primario2 solid 0.1rem;
+				padding: 0.8rem;
+				border-radius: 0.4rem;
+			}
+			button {
+				display: flex;
+				align-items: center;
+				border: none;
+				background-color: transparent;
+				padding: 0;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			img {
+				margin-left: 2rem;
+				height: 2.4rem;
+				width: 2.4rem;
+			}
+		}
+
+		.start {
+			margin-top: -2rem;
+			border: none;
+			display: flex;
+			align-items: center;
+			@include tabletinvert {
+				justify-content: center;
+			}
+			input {
+				margin: 0.8rem;
+				width: 2.4rem;
+				height: 2.4rem;
+				accent-color: $secundario;
+			}
+			label {
+				font-size: 1.4rem;
+				margin-right: 2.4rem;
+			}
+		}
+	}
+}
+
+.btn {
+	@include tablet {
+		transform: translateX(calc(237%));
+	}
+	margin-top: 3.4rem;
+	padding: 1.2rem 3.2rem;
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 600;
+	border-radius: 2.5rem;
+	border: none;
+	color: $blanco;
+	background-color: $desActive;
+	@include tabletinvert {
+		width: 100%;
+	}
+}

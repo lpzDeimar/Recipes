@@ -1,4 +1,8 @@
 .layout__main {
 	display: grid;
-	grid-template-columns: 34rem auto;
+	grid-template-columns: auto;
+
+	@include tablet {
+		grid-template-columns: min(34rem, 100%) auto;
+	}
 }

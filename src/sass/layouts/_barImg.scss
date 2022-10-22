@@ -1,9 +1,15 @@
 .barimg {
 	margin: 0;
+	padding: 0;
 	img {
+		display: inline-block;
+		vertical-align: top;
 		min-height: 100vh;
 		object-fit: cover;
 		border-bottom-right-radius: 10rem;
 		object-position: center;
+		@include tabletinvert {
+			min-height: 30vh;
+		}
 	}
 }
