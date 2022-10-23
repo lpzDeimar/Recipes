@@ -1,4 +1,4 @@
-.formRecipe {
+.modal {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -22,7 +22,7 @@
 		}
 	}
 
-	form {
+	.modal__bar {
 		background-color: $blanco;
 		padding: 2.4rem;
 		@include tabletinvert {
@@ -97,16 +97,17 @@
 				margin-right: 2.4rem;
 			}
 		}
+		position: relative;
+		padding-bottom: 10rem;
 	}
 }
 
 .btn {
-	@include tablet {
-		transform: translateX(calc(237%));
-	}
+	position: absolute;
+	right: 2.4rem;
+
 	margin-top: 3.4rem;
 	padding: 1.2rem 3.2rem;
-	display: block;
 	font-size: 1.6rem;
 	font-weight: 600;
 	border-radius: 2.5rem;
@@ -114,10 +115,13 @@
 	color: $blanco;
 	background-color: $desActive;
 	@include tabletinvert {
-		width: 100%;
+		width: 90%;
 	}
 
 	&:hover {
 		cursor: pointer;
 	}
+}
+.btnActi {
+	background-color: $secundarioOsc;
 }

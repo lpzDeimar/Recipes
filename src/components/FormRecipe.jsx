@@ -23,8 +23,9 @@ export const FormRecipe = props => {
 	};
 
 	return (
-		<section className='formRecipe' onClick={onClickButton} ref={modal}>
+		<section className='modal' onClick={onClickButton} ref={modal}>
 			<form
+				className='modal__bar'
 				data-aos='fade-left'
 				data-aos-anchor='#example-anchor'
 				data-aos-offset='500'

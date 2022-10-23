@@ -13,6 +13,14 @@ export const RowRecipe = ({ recipe, onToggle, setStatus }) => {
 					setStatus(status => ({
 						...status,
 						viewEdit: true,
+						viewRecipe: true,
+						recipeDispach: recipe,
+					}));
+				} else {
+					setStatus(status => ({
+						...status,
+						viewEdit: true,
+						viewRecipe: false,
 						recipeDispach: recipe,
 					}));
 				}

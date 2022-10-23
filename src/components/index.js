@@ -10,3 +10,4 @@ export * from './RowRecipe';
 export * from './Stars';
 export * from './Table';
 export * from './Togglebtn';
+export * from './ViewRecipe';

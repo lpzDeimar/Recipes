@@ -3,9 +3,16 @@ import 'aos/dist/aos.css';
 import toast, { Toaster } from 'react-hot-toast';
 
 import { useEffect, useReducer, useState } from 'react';
-import { CreateBtn, FormRecipe, Modal, Table, RowRecipe } from './components';
+import {
+	CreateBtn,
+	FormRecipe,
+	Modal,
+	Table,
+	RowRecipe,
+	ViewRecipe,
+	Togglebtn,
+} from './components';
 import { Barimg, Header, Layout, MainContent } from './layouts';
-import { ViewRecipe } from './components/ViewRecipe';
 
 // estado inicial de las recetas
 const initialState = [
@@ -89,6 +96,7 @@ const reducer = (stateRecipes, action) => {
 				),
 				1
 			);
+			console.log(...action.payload);
 			return [...newState, ...action.payload].sort((a, b) =>
 				a.id > b.id ? 1 : a.id < b.id ? -1 : 0
 			);
@@ -117,7 +125,7 @@ export const App = () => {
 	// estado de la aplicacion
 	const [status, setStatus] = useState({
 		viewAdd: false,
-		viewRecipe: true,
+		viewRecipe: false,
 		viewView: false,
 		viewEdit: false,
 		visibleMenu: !false,
@@ -188,7 +196,20 @@ export const App = () => {
 			</Layout>
 			{status.viewRecipe && (
 				<Modal>
-					<ViewRecipe recipeDispach={status.recipeDispach}></ViewRecipe>
+					<ViewRecipe
+						setStatus={setStatus}
+						recipeDispach={status.recipeDispach}>
+						<Togglebtn
+							check={status.recipeDispach.state}
+							setCheck={() => {
+								onToggle(status.recipeDispach);
+								setStatus(status => ({
+									...status,
+									viewRecipe: false,
+								}));
+							}}
+						/>
+					</ViewRecipe>
 				</Modal>
 			)}
 			{status.viewAdd && (
