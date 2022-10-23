@@ -9,6 +9,7 @@
 	z-index: 10;
 	display: flex;
 	justify-content: flex-end;
+	overflow-x: hidden;
 
 	animation: aparency 400ms;
 
@@ -20,9 +21,8 @@
 			opacity: 1;
 		}
 	}
-	overflow-x: hidden;
 
-	article {
+	form {
 		background-color: $blanco;
 		padding: 2.4rem;
 		@include tabletinvert {
@@ -73,6 +73,9 @@
 			@include tablet {
 				max-width: 41rem;
 			}
+			label {
+				margin-bottom: 0.3rem;
+			}
 		}
 
 		.start {
@@ -112,5 +115,9 @@
 	background-color: $desActive;
 	@include tabletinvert {
 		width: 100%;
+	}
+
+	&:hover {
+		cursor: pointer;
 	}
 }

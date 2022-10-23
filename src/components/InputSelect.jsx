@@ -2,11 +2,29 @@ import { useState } from 'react';
 
 export const InputSelect = () => {
 	const [select, setSelect] = useState('All');
-	const [visibleMenu, setVisibleMenu] = useState(false);
+	const [visibleMenu, setVisibleMenu] = useState(true);
+
+	const onFilterState = filt => {
+		document.querySelectorAll('.recipe').forEach(item => {
+			item.classList.remove('displaynone');
+
+			if (filt === 'Active') {
+				document.querySelectorAll('.inactive').forEach(item => {
+					item.classList.add('displaynone');
+				});
+			}
+			if (filt === 'Inactive') {
+				document.querySelectorAll('.active').forEach(item => {
+					item.classList.add('displaynone');
+				});
+			}
+		});
+	};
 
 	const handlerInputRadio = event => {
 		setSelect(event.target.value);
 		setVisibleMenu(!visibleMenu);
+		onFilterState(event.target.value);
 	};
 
 	return (

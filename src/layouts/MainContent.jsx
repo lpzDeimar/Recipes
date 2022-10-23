@@ -1,9 +1,8 @@
 import { FilterSearch } from '../components/FilterSearch';
 import { InputSearch } from '../components/InputSearch';
 import { InputSelect } from '../components/InputSelect';
-import { Table } from '../components/Table';
 
-export const MainContent = () => {
+export const MainContent = ({ children }) => {
 	return (
 		<main className='mainContent'>
 			<section>
@@ -14,8 +13,7 @@ export const MainContent = () => {
 						<InputSelect />
 					</FilterSearch>
 				</div>
-
-				<Table></Table>
+				{children}
 			</section>
 		</main>
 	);

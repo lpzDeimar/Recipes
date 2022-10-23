@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 export const CreateBtn = props => {
 	const onClickButton = () => {
-		props.setViModal(prevState => !prevState);
+		props.setStatus(prevState => ({
+			...prevState,
+			viewAdd: !prevState.viewAdd,
+		}));
 	};
 
 	return (
@@ -21,5 +24,5 @@ export const CreateBtn = props => {
 };
 
 CreateBtn.propTypes = {
-	setViModal: PropTypes.func.isRequired,
+	setStatus: PropTypes.func.isRequired,
 };

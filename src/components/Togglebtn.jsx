@@ -1,15 +1,15 @@
-import { useState } from 'react';
-
-export const Togglebtn = () => {
-	const [check, setCheck] = useState(false);
-
+export const Togglebtn = ({ check, setCheck }) => {
+	// const [check, setCheck] = useState(false);
+	const onCheck = () => {
+		setCheck();
+	};
 	return (
 		<label className='switch'>
 			<input
 				type='checkbox'
 				checked={check}
 				onChange={() => {
-					setCheck(!check);
+					onCheck();
 				}}
 			/>
 			<span className='slider round'></span>

@@ -30,6 +30,11 @@
 				padding: 0.8rem;
 				border-bottom: 0.1rem solid $blanco4;
 			}
+			tr {
+				&:hover {
+					background-color: $blanco2;
+				}
+			}
 		}
 	}
 
@@ -37,4 +42,8 @@
 	&::-webkit-scrollbar {
 		width: 0;
 	}
+}
+
+.displaynone {
+	display: none;
 }

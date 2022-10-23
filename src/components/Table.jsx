@@ -1,6 +1,4 @@
-import { Togglebtn } from './Togglebtn';
-
-export const Table = () => {
+export const Table = ({ children }) => {
 	return (
 		<div className='table'>
 			<table>
@@ -11,34 +9,7 @@ export const Table = () => {
 						<th>Cooked before</th>
 					</tr>
 				</thead>
-
-				<tbody>
-					<tr>
-						<td>
-							Nombre de una receta a mostrar Nombre de una receta a mostrar
-							Nombre de una receta a mostrar Nombre de una receta a mostrar
-						</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-					<tr>
-						<td>Nombre de una receta a mostrar</td>
-						<td>⭐⭐⭐⭐⭐</td>
-						<td>
-							<Togglebtn></Togglebtn>
-						</td>
-					</tr>
-				</tbody>
+				<tbody>{children}</tbody>
 			</table>
 		</div>
 	);

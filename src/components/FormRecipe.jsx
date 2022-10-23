@@ -4,11 +4,10 @@ import { Togglebtn } from './Togglebtn';
 import { ListIngredients } from './ListIngredients';
 
 const autoHeight = event => {
+	const heightText = event.target.scrollHeight;
 	event.keyCode === 8
-		? (event.target.style.height = `${
-				event.target.scrollHeight > 90 && event.target.scrollHeight - 14
-		  }px`)
-		: (event.target.style.height = `${event.target.scrollHeight}px`);
+		? (event.target.style.height = `${heightText > 90 && heightText - 14}px`)
+		: (event.target.style.height = `${heightText}px`);
 };
 
 export const FormRecipe = props => {
@@ -16,13 +15,16 @@ export const FormRecipe = props => {
 
 	const onClickButton = event => {
 		if (event.target === modal.current) {
-			props.setViModal(prevState => !prevState);
+			props.setStatus(prevState => ({
+				...prevState,
+				viewAdd: !prevState.viewAdd,
+			}));
 		}
 	};
 
 	return (
 		<section className='formRecipe' onClick={onClickButton} ref={modal}>
-			<article
+			<form
 				data-aos='fade-left'
 				data-aos-anchor='#example-anchor'
 				data-aos-offset='500'
@@ -66,20 +68,18 @@ export const FormRecipe = props => {
 
 					<input type='radio' name='start' />
 					<label htmlFor=''>4</label>
-
-					<input type='radio' name='start' />
-					<label htmlFor=''>5</label>
 				</fieldset>
 
 				<p>Cooked before</p>
 				<Togglebtn />
-
-				<button className='btn '>Create</button>
-			</article>
+				<button className='btn' type='button'>
+					Create
+				</button>
+			</form>
 		</section>
 	);
 };
 
 FormRecipe.propTypes = {
-	setViModal: PropTypes.func.isRequired,
+	setStatus: PropTypes.func.isRequired,
 };
