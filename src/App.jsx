@@ -11,6 +11,7 @@ import { MainContent } from './layouts/MainContent';
 import { Table } from './components/Table';
 import { Togglebtn } from './components/Togglebtn';
 import { Stars } from './components/Stars';
+import toast, { Toaster } from 'react-hot-toast';
 
 const initialState = [
 	{
@@ -112,6 +113,8 @@ export const App = () => {
 		viewView: false,
 		viewEdit: false,
 		recipeDispach: {},
+		inputSearch: '',
+		stateFilter: [],
 	});
 
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -127,14 +130,49 @@ export const App = () => {
 		Aos.init();
 	}, []);
 
+	useEffect(() => {
+		const stateFilter = state => {
+			const stateWithFilter = [...state].filter(item =>
+				item.title.toLowerCase().includes(`${status.inputSearch}`)
+			);
+
+			if (stateWithFilter.length > 0) {
+				return stateWithFilter;
+			} else {
+				toast('Recipe`t registered!', {
+					icon: '📙',
+					style: {
+						borderRadius: '10px',
+						background: '#333',
+						color: '#fff',
+					},
+				});
+				return [];
+			}
+		};
+
+		setStatus({ ...status, stateFilter: stateFilter(state) });
+	}, [status.inputSearch, state]);
+
 	return (
 		<>
 			<Header />
 			<Layout>
+				<Toaster
+					containerStyle={{ zIndex: 10000000 }}
+					position='top-right'
+					reverseOrder={true}
+				/>
 				<Barimg />
-				<MainContent>
+				<MainContent
+					onSearch={search => {
+						setStatus(prevState => ({
+							...prevState,
+							inputSearch: search,
+						}));
+					}}>
 					<Table>
-						{state.map((recipe, i) => (
+						{status.stateFilter.map((recipe, i) => (
 							<tr
 								className={`recipe ${recipe.state ? 'active' : 'inactive'}`}
 								key={recipe.id}
