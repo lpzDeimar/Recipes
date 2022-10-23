@@ -14,9 +14,9 @@
 
 	.input__ingrement {
 		margin-left: 0.8rem;
-		border: $primario2 solid 0.1rem;
 		padding: 0.8rem;
 		border-radius: 0.4rem;
+		border: $primario2 solid 0.1rem !important;
 	}
 	button {
 		display: flex;

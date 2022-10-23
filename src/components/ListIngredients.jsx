@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { ItemIngredients } from './ItemIngredients';
+import { ItemIngredients } from './';
 
 const defaultState = {
 	ingredient: '',

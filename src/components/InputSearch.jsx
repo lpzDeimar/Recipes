@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 export const InputSearch = ({ onSearch }) => {
 	const [search, setSearch] = useState('');
 
@@ -22,10 +24,13 @@ export const InputSearch = ({ onSearch }) => {
 				placeholder='Search'
 				value={search}
 				onChange={() => {
-					// onSearch(onSearch(' '));
 					setSearch(event.target.value);
 				}}
 			/>
 		</div>
 	);
+};
+
+InputSearch.propTypes = {
+	onSearch: PropTypes.func.isRequired,
 };

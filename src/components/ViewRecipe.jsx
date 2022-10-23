@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
+
 import { useRef } from 'react';
-import { Stars } from './Stars';
+import { Stars } from './';
 
 export const ViewRecipe = ({ recipeDispach, children, setStatus }) => {
 	const modalView = useRef(null);
@@ -45,4 +47,10 @@ export const ViewRecipe = ({ recipeDispach, children, setStatus }) => {
 			</article>
 		</section>
 	);
+};
+
+ViewRecipe.protoType = {
+	recipeDispach: PropTypes.any.isRequired,
+	children: PropTypes.any.isRequired,
+	setStatus: PropTypes.func.isRequired,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Table = ({ children }) => {
 	return (
 		<div className='table'>
@@ -13,4 +15,7 @@ export const Table = ({ children }) => {
 			</table>
 		</div>
 	);
+};
+Table.protoType = {
+	children: PropTypes.any.isRequired,
 };

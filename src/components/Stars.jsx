@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Stars = ({ star }) => {
 	return (
 		<div className='stars'>
@@ -19,4 +21,8 @@ export const Stars = ({ star }) => {
 			/>
 		</div>
 	);
+};
+
+Stars.propTypes = {
+	star: PropTypes.number.isRequired,
 };

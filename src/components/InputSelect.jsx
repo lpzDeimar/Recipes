@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const InputSelect = ({ setStatus, status }) => {
 	const onFilterState = filt => {
 		document.querySelectorAll('.recipe').forEach(item => {
@@ -75,4 +77,9 @@ export const InputSelect = ({ setStatus, status }) => {
 			</div>
 		</div>
 	);
+};
+
+InputSelect.propTypes = {
+	setStatus: PropTypes.func.isRequired,
+	status: PropTypes.any.isRequired,
 };

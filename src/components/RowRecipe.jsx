@@ -1,5 +1,6 @@
-import { Stars } from './Stars';
-import { Togglebtn } from './Togglebtn';
+import PropTypes from 'prop-types';
+
+import { Stars, Togglebtn } from './';
 
 export const RowRecipe = ({ recipe, onToggle, setStatus }) => {
 	return (
@@ -37,4 +38,10 @@ export const RowRecipe = ({ recipe, onToggle, setStatus }) => {
 			</td>
 		</tr>
 	);
+};
+
+RowRecipe.propTypes = {
+	recipe: PropTypes.any.isRequired,
+	onToggle: PropTypes.func.isRequired,
+	setStatus: PropTypes.func.isRequired,
 };

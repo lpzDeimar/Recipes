@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
+
 export const Togglebtn = ({ check, setCheck }) => {
-	// const [check, setCheck] = useState(false);
-	// console.log(check);
 	const onCheck = () => {
 		console.log(check);
 		setCheck();
@@ -17,4 +17,9 @@ export const Togglebtn = ({ check, setCheck }) => {
 			<span className='slider round'></span>
 		</label>
 	);
+};
+
+Togglebtn.propTypes = {
+	check: PropTypes.bool.isRequired,
+	setCheck: PropTypes.func.isRequired,
 };

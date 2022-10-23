@@ -1,6 +1,5 @@
-import { FilterSearch } from '../components/FilterSearch';
-import { InputSearch } from '../components/InputSearch';
-import { InputSelect } from '../components/InputSelect';
+import PropTypes from 'prop-types';
+import { FilterSearch, InputSearch, InputSelect } from '../components/';
 
 export const MainContent = ({ onSearch, children, setStatus, status }) => {
 	return (
@@ -17,4 +16,11 @@ export const MainContent = ({ onSearch, children, setStatus, status }) => {
 			</section>
 		</main>
 	);
+};
+
+MainContent.protoType = {
+	onSearch: PropTypes.func.isRequired,
+	children: PropTypes.any.isRequired,
+	setStatus: PropTypes.func.isRequired,
+	status: PropTypes.any.isRequired,
 };

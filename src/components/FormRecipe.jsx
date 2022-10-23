@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Togglebtn } from './Togglebtn';
-import { ListIngredients } from './ListIngredients';
+import { Togglebtn, ListIngredients } from './';
 
 const autoHeight = event => {
 	const heightText = event.target.scrollHeight;
