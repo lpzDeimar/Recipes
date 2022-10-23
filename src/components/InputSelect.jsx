@@ -1,9 +1,4 @@
-import { useState } from 'react';
-
-export const InputSelect = () => {
-	const [select, setSelect] = useState('All');
-	const [visibleMenu, setVisibleMenu] = useState(true);
-
+export const InputSelect = ({ setStatus, status }) => {
 	const onFilterState = filt => {
 		document.querySelectorAll('.recipe').forEach(item => {
 			item.classList.remove('displaynone');
@@ -22,8 +17,12 @@ export const InputSelect = () => {
 	};
 
 	const handlerInputRadio = event => {
-		setSelect(event.target.value);
-		setVisibleMenu(!visibleMenu);
+		setStatus(status => ({
+			...status,
+			select: event.target.value,
+			visibleMenu: !status.visibleMenu,
+			inputSearch: '',
+		}));
 		onFilterState(event.target.value);
 	};
 
@@ -31,12 +30,18 @@ export const InputSelect = () => {
 		<div className='inputSelect'>
 			<button
 				onClick={() => {
-					setVisibleMenu(!visibleMenu);
+					setStatus(status => ({
+						...status,
+						visibleMenu: !status.visibleMenu,
+					}));
 				}}>
-				Cooked before: <span> {select}</span>
+				Cooked before: <span> {status.select}</span>
 				<img src='./src/assets/svg/arrow.svg' alt='' />
 			</button>
-			<div className={` inputSelect__menu ${visibleMenu ? 'displaynone' : ''}`}>
+			<div
+				className={` inputSelect__menu ${
+					status.visibleMenu ? 'displaynone' : ''
+				}`}>
 				<div>
 					<label htmlFor='All'>All</label>
 					<input

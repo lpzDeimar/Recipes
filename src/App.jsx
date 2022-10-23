@@ -1,18 +1,13 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect, useReducer, useState } from 'react';
-import { CreateBtn } from './components/CreateBtn';
-import { FormRecipe } from './components/FormRecipe';
-import { Modal } from './components/Modal';
-import { Barimg } from './layouts/BarImg';
-import { Header } from './layouts/Header';
-import { Layout } from './layouts/Layout';
-import { MainContent } from './layouts/MainContent';
-import { Table } from './components/Table';
-import { Togglebtn } from './components/Togglebtn';
-import { Stars } from './components/Stars';
 import toast, { Toaster } from 'react-hot-toast';
 
+import { useEffect, useReducer, useState } from 'react';
+import { CreateBtn, FormRecipe, Modal, Table, RowRecipe } from './components';
+import { Barimg, Header, Layout, MainContent } from './layouts';
+import { ViewRecipe } from './components/ViewRecipe';
+
+// estado inicial de las recetas
 const initialState = [
 	{
 		id: 1,
@@ -70,36 +65,38 @@ const initialState = [
 ];
 
 let newState;
-
-const reducer = (state, action) => {
+// creado para controlar las recetas unicamente
+const reducer = (stateRecipes, action) => {
 	switch (action.type) {
 		case 'ADD':
 			return [
-				...state,
+				...stateRecipes,
 				...action.payload, // [{new recipe}]
 			];
 
 		case 'EDIT':
-			return [...state, ...action.payload];
+			return [...stateRecipes, ...action.payload];
 
 		case 'FILTERSTATE':
 			return [...action.payload];
 
 		case 'TOGGLE':
-			newState = [...state];
+			newState = [...stateRecipes];
 
 			newState.splice(
-				state.indexOf(state.find(item => item.id === action.payload[0].id)),
+				stateRecipes.indexOf(
+					stateRecipes.find(item => item.id === action.payload[0].id)
+				),
 				1
 			);
 			return [...newState, ...action.payload].sort((a, b) =>
 				a.id > b.id ? 1 : a.id < b.id ? -1 : 0
 			);
 		default:
-			return [...state];
+			return [...stateRecipes];
 	}
 };
-
+// actiontypes de las recetas
 const actionTypes = {
 	ADD: 'ADD',
 	EDIT: 'EDIT',
@@ -108,15 +105,6 @@ const actionTypes = {
 };
 
 export const App = () => {
-	const [status, setStatus] = useState({
-		viewAdd: false,
-		viewView: false,
-		viewEdit: false,
-		recipeDispach: {},
-		inputSearch: '',
-		stateFilter: [],
-	});
-
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const onToggle = recipe => {
@@ -125,6 +113,19 @@ export const App = () => {
 			payload: [{ ...recipe, state: !recipe.state }],
 		});
 	};
+
+	// estado de la aplicacion
+	const [status, setStatus] = useState({
+		viewAdd: false,
+		viewRecipe: true,
+		viewView: false,
+		viewEdit: false,
+		visibleMenu: !false,
+		select: 'All',
+		recipeDispach: {},
+		inputSearch: '',
+		stateFilter: [],
+	});
 
 	useEffect(() => {
 		Aos.init();
@@ -165,6 +166,8 @@ export const App = () => {
 				/>
 				<Barimg />
 				<MainContent
+					status={status}
+					setStatus={setStatus}
 					onSearch={search => {
 						setStatus(prevState => ({
 							...prevState,
@@ -173,41 +176,21 @@ export const App = () => {
 					}}>
 					<Table>
 						{status.stateFilter.map((recipe, i) => (
-							<tr
-								className={`recipe ${recipe.state ? 'active' : 'inactive'}`}
+							<RowRecipe
+								recipe={recipe}
+								onToggle={onToggle}
+								setStatus={setStatus}
 								key={recipe.id}
-								onClick={() => {
-									if (
-										`${event.target.localName}` !== 'span' &&
-										`${event.target.localName}` !== 'input'
-									) {
-										setStatus({
-											...status,
-											viewEdit: true,
-											recipeDispach: recipe,
-										});
-									}
-								}}>
-								<td>{recipe.title}</td>
-								<td>{<Stars star={recipe.star} />}</td>
-								<td>
-									<Togglebtn
-										check={recipe.state}
-										setCheck={() => {
-											onToggle(recipe);
-										}}
-									/>
-								</td>
-							</tr>
+							/>
 						))}
 					</Table>
 				</MainContent>
 			</Layout>
-			{
+			{status.viewRecipe && (
 				<Modal>
-					<code>{JSON.stringify(status.recipeDispach)}</code>
+					<ViewRecipe recipeDispach={status.recipeDispach}></ViewRecipe>
 				</Modal>
-			}
+			)}
 			{status.viewAdd && (
 				<Modal>
 					<FormRecipe setStatus={setStatus} />
