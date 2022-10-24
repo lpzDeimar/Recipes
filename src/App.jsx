@@ -1,5 +1,7 @@
+// libreria para animaciones de scroll o carga de elementos
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+// libreria para notificaciones flotantes
 import toast, { Toaster } from 'react-hot-toast';
 
 import { useEffect, useReducer, useState } from 'react';
@@ -81,12 +83,6 @@ const reducer = (stateRecipes, action) => {
 				...action.payload, // [{new recipe}]
 			];
 
-		case 'EDIT':
-			return [...stateRecipes, ...action.payload];
-
-		case 'FILTERSTATE':
-			return [...action.payload];
-
 		case 'TOGGLE':
 			newState = [...stateRecipes];
 
@@ -100,6 +96,7 @@ const reducer = (stateRecipes, action) => {
 			return [...newState, ...action.payload].sort((a, b) =>
 				a.id > b.id ? 1 : a.id < b.id ? -1 : 0
 			);
+
 		default:
 			return [...stateRecipes];
 	}
@@ -107,14 +104,13 @@ const reducer = (stateRecipes, action) => {
 // actiontypes de las recetas
 const actionTypes = {
 	ADD: 'ADD',
-	EDIT: 'EDIT',
 	TOGGLE: 'TOGGLE',
-	FILTERSTATE: 'FILTERSTATE',
 };
 
 export const App = () => {
 	const [stateRecipes, dispatch] = useReducer(reducer, initialState);
 
+	// actions of reducer recipes
 	const onToggle = recipe => {
 		dispatch({
 			type: actionTypes.TOGGLE,
