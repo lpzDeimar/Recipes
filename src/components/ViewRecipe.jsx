@@ -15,6 +15,14 @@ export const ViewRecipe = ({ recipeDispach, children, setStatus }) => {
 		}
 	};
 
+	const handleEdit = event => {
+		setStatus(prevState => ({
+			...prevState,
+			viewEdit: true,
+			viewRecipe: false,
+		}));
+	};
+
 	return (
 		<section className='modal' onClick={onClickButton} ref={modalView}>
 			<article className='modal__bar modal__view'>
@@ -43,7 +51,13 @@ export const ViewRecipe = ({ recipeDispach, children, setStatus }) => {
 					<p>Copked before</p>
 					{children}
 				</div>
-				<button className='btn btnActi'>Edit</button>
+				<button
+					onClick={() => {
+						handleEdit();
+					}}
+					className='btn btnActi'>
+					Edit
+				</button>
 			</article>
 		</section>
 	);

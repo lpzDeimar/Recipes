@@ -215,7 +215,8 @@ export const App = () => {
 					</ViewRecipe>
 				</Modal>
 			)}
-			{status.viewAdd && (
+
+			{(status.viewAdd || status.viewEdit) && (
 				<Modal>
 					<FormRecipe
 						setStatus={setStatus}

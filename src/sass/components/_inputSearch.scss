@@ -11,6 +11,9 @@
 		img {
 			width: 2.4rem;
 		}
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	input {
 		border: none;

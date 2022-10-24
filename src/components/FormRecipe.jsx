@@ -16,13 +16,15 @@ export const FormRecipe = props => {
 	const defaultState = {
 		ingredient: '',
 	};
+
 	const [ingredient, setIngredient] = useState([defaultState]);
 
 	const onClickButton = event => {
 		if (event.target === modal.current) {
 			props.setStatus(prevState => ({
 				...prevState,
-				viewAdd: !prevState.viewAdd,
+				viewEdit: false,
+				viewAdd: false,
 			}));
 		}
 	};
