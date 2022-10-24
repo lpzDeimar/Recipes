@@ -1,25 +1,28 @@
-import PropTypes from 'prop-types';
-
-export const Togglebtn = ({ check, setCheck }) => {
+export const Togglebtn = ({
+	check,
+	setCheck,
+	register = () => {},
+	add = false,
+}) => {
 	const onCheck = () => {
 		console.log(check);
 		setCheck();
 	};
+
 	return (
 		<label className='switch'>
-			<input
-				type='checkbox'
-				checked={check}
-				onChange={() => {
-					onCheck();
-				}}
-			/>
+			{!add ? (
+				<input
+					type='checkbox'
+					checked={check}
+					onChange={() => {
+						onCheck();
+					}}
+				/>
+			) : (
+				<input {...register('state')} type='checkbox' />
+			)}
 			<span className='slider round'></span>
 		</label>
 	);
-};
-
-Togglebtn.propTypes = {
-	check: PropTypes.bool.isRequired,
-	setCheck: PropTypes.func.isRequired,
 };

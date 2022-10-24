@@ -113,12 +113,19 @@ const actionTypes = {
 };
 
 export const App = () => {
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [stateRecipes, dispatch] = useReducer(reducer, initialState);
 
 	const onToggle = recipe => {
 		dispatch({
 			type: actionTypes.TOGGLE,
 			payload: [{ ...recipe, state: !recipe.state }],
+		});
+	};
+
+	const onAdd = recipe => {
+		dispatch({
+			type: actionTypes.ADD,
+			payload: [recipe],
 		});
 	};
 
@@ -160,8 +167,8 @@ export const App = () => {
 			}
 		};
 
-		setStatus({ ...status, stateFilter: stateFilter(state) });
-	}, [status.inputSearch, state]);
+		setStatus({ ...status, stateFilter: stateFilter(stateRecipes) });
+	}, [status.inputSearch, stateRecipes]);
 
 	return (
 		<>
@@ -214,7 +221,11 @@ export const App = () => {
 			)}
 			{status.viewAdd && (
 				<Modal>
-					<FormRecipe setStatus={setStatus} />
+					<FormRecipe
+						setStatus={setStatus}
+						initialState={stateRecipes}
+						onAdd={onAdd}
+					/>
 				</Modal>
 			)}
 			<Modal>

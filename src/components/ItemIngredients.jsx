@@ -11,9 +11,11 @@ export const ItemIngredients = ({
 		<label htmlFor=''>
 			{num}
 			<input
+				name={`ingredientes${num}`}
 				onChange={e => onChange('ingredient', e.target.value)}
 				className='input__ingrement'
 				type='text'
+				required
 				placeholder='Type ingredient'
 				value={ingredient}
 			/>

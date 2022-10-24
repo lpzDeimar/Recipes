@@ -1,13 +1,11 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { ItemIngredients } from './';
 
-const defaultState = {
-	ingredient: '',
-};
-
-export const ListIngredients = () => {
-	const [ingredient, setIngredient] = useState([defaultState]);
-
+export const ListIngredients = ({
+	defaultState,
+	setIngredient,
+	ingredient,
+}) => {
 	const handleOnChange = (index, name, value) => {
 		const copyRows = [...ingredient];
 		copyRows[index] = {

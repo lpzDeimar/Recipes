@@ -1,5 +1,6 @@
 .modal__view {
 	max-width: 46rem;
+	min-width: min(35rem, 100%);
 
 	.modal__group {
 		ul {
