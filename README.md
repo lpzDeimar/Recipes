@@ -1,6 +1,3 @@
-### Tinkin
-
-- In this project is the elaboration of the advanced problem raised in the technical test, which has as its purpose the realization of a page of recipes for an NGO
 
 ![](https://uploads-ssl.webflow.com/6112ca9c002c6da88706b3c1/611cfe9cf795e5b500a3c8c1_Group%20625857.svg)
 
