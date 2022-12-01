@@ -39,6 +39,7 @@ export const FormRecipe = props => {
 	});
 
 	const onSubmit = data => {
+		console.log(data);
 		props.onAdd({
 			...data,
 			star: parseInt(data.star),
@@ -109,6 +110,17 @@ export const FormRecipe = props => {
 						<p className='warningForm'>Minimum 20 characters</p>
 					)}
 				</div>
+				<p>Peso</p>
+				<div className='formRecipe__group'>
+					<label htmlFor=''>Peso: 123</label>
+					<input
+						type='number'
+						{...register('peso', {
+							required: true,
+						})}
+					/>
+				</div>
+				{errors.peso?.type === 'required' && <p>Peso required</p>}
 
 				<p>Reviews</p>
 

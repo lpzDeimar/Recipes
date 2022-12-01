@@ -15,6 +15,7 @@ import {
 	Togglebtn,
 } from './components';
 import { Barimg, Header, Layout, MainContent } from './layouts';
+import { OrderBtn } from './components/OrderBtn';
 
 // estado inicial de las recetas
 const initialState = [
@@ -34,6 +35,7 @@ const initialState = [
 
 		star: 3,
 		state: true,
+		peso: 123,
 	},
 	{
 		id: 2,
@@ -49,6 +51,7 @@ const initialState = [
 
 		star: 4,
 		state: true,
+		peso: 73,
 	},
 	{
 		id: 4,
@@ -59,6 +62,7 @@ const initialState = [
 
 		star: 1,
 		state: false,
+		peso: 43,
 	},
 
 	{
@@ -70,6 +74,7 @@ const initialState = [
 
 		star: 2,
 		state: true,
+		peso: 1123,
 	},
 ];
 
@@ -227,6 +232,7 @@ export const App = () => {
 			)}
 			<Modal>
 				<CreateBtn setStatus={setStatus} />
+				{/* <OrderBtn setStatus={setStatus} /> */}
 			</Modal>
 		</>
 	);

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useDebounce } from 'use-debounce';
 import PropTypes from 'prop-types';
 
 export const InputSearch = ({ onSearch }) => {
 	const [search, setSearch] = useState('');
+	const [value] = useDebounce(search, 1000);
 
 	return (
 		<div className='inputSearch'>
@@ -25,6 +27,10 @@ export const InputSearch = ({ onSearch }) => {
 				value={search}
 				onChange={() => {
 					setSearch(event.target.value);
+					if (value.length > 0) {
+						onSearch(value.toLowerCase());
+					}
+					// setSearch('');
 				}}
 			/>
 		</div>

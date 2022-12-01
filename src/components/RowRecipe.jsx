@@ -34,6 +34,7 @@ export const RowRecipe = ({ recipe, onToggle, setStatus }) => {
 					}}
 				/>
 			</td>
+			<td>{recipe.peso}</td>
 		</tr>
 	);
 };
