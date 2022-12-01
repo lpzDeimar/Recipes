@@ -15,7 +15,7 @@ import {
 	Togglebtn,
 } from './components';
 import { Barimg, Header, Layout, MainContent } from './layouts';
-import { OrderBtn } from './components/OrderBtn';
+// import { OrderBtn } from './components/OrderBtn';
 
 // estado inicial de las recetas
 const initialState = [
