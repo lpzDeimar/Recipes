@@ -1,6 +1,8 @@
 import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 
+import more from '/src/assets/svg/more.svg';
+
 export const CreateBtn = props => {
 	const onClickButton = () => {
 		props.setStatus(prevState => ({
@@ -16,7 +18,7 @@ export const CreateBtn = props => {
 				data-for='createBtn'
 				className='createBtn'
 				onClick={onClickButton}>
-				<img src='./src/assets/svg/more.svg' alt='' />
+				<img src={more} alt='More' />
 			</button>
 			<ReactTooltip id='createBtn'>Add Recipe</ReactTooltip>
 		</>

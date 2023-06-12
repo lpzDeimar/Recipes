@@ -1,6 +1,9 @@
 import { Fragment } from 'react';
 import { ItemIngredients } from './';
 
+import trashIcon from '/src/assets/svg/trash.svg'
+import addIcon from '/src/assets/svg/add.svg'
+
 export const ListIngredients = ({
 	defaultState,
 	setIngredient,
@@ -37,7 +40,7 @@ export const ListIngredients = ({
 								{...row}
 								onChange={(name, value) => handleOnChange(index, name, value)}
 								onAction={() => handleOnRemove(index)}
-								icon='./src/assets/svg/trash.svg'
+								icon={trashIcon}
 							/>
 						) : (
 							<ItemIngredients
@@ -45,7 +48,7 @@ export const ListIngredients = ({
 								{...row}
 								onChange={(name, value) => handleOnChange(index, name, value)}
 								onAction={() => handleOnAdd()}
-								icon='./src/assets/svg/add.svg'
+								icon={addIcon}
 							/>
 						)}
 					</Fragment>

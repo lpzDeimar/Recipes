@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import arrowIcon from '/src/assets/svg/arrow.svg'
+
 export const InputSelect = ({ setStatus, status }) => {
 	const onFilterState = filt => {
 		document.querySelectorAll('.recipe').forEach(item => {
@@ -38,7 +40,7 @@ export const InputSelect = ({ setStatus, status }) => {
 					}));
 				}}>
 				Cooked before: <span> {status.select}</span>
-				<img src='./src/assets/svg/arrow.svg' alt='' />
+				<img src={arrowIcon} alt='' />
 			</button>
 			<div
 				className={` inputSelect__menu ${

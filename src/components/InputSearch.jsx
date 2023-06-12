@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
 import PropTypes from 'prop-types';
 
+import searchIcon from '/src/assets/svg/search.svg'
+
 export const InputSearch = ({ onSearch }) => {
 	const [search, setSearch] = useState('');
-	const [value] = useDebounce(search, 1000);
+	const [value] = useDebounce(search, 300);
 
 	return (
 		<div className='inputSearch'>
@@ -13,7 +15,7 @@ export const InputSearch = ({ onSearch }) => {
 					onSearch(search.toLowerCase());
 					setSearch('');
 				}}>
-				<img src='./src/assets/svg/search.svg' alt='' />
+				<img src={searchIcon} alt='' />
 			</i>
 			<input
 				onKeyDown={event => {
@@ -30,7 +32,6 @@ export const InputSearch = ({ onSearch }) => {
 					if (value.length > 0) {
 						onSearch(value.toLowerCase());
 					}
-					// setSearch('');
 				}}
 			/>
 		</div>
