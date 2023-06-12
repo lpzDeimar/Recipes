@@ -1,22 +1,25 @@
 import PropTypes from 'prop-types';
 
+import startActive from '/src/assets/svg/staractive.svg'
+import startInActive from '/src/assets/svg/starInactive.svg'
+
 export const Stars = ({ star }) => {
 	return (
 		<div className='stars'>
 			<img
-				src={`/src/assets/svg/star${star < 1 ? 'In' : ''}active.svg`}
+				src={`${star < 1 ? startInActive : startActive}`}
 				alt='star de puntuar'
 			/>
 			<img
-				src={`/src/assets/svg/star${star < 2 ? 'In' : ''}active.svg`}
+				src={`${star < 2 ? startInActive : startActive}`}
 				alt='star de puntuar'
 			/>
 			<img
-				src={`/src/assets/svg/star${star < 3 ? 'In' : ''}active.svg`}
+				src={`${star < 3 ? startInActive : startActive}`}
 				alt='star de puntuar'
 			/>
 			<img
-				src={`/src/assets/svg/star${star < 4 ? 'In' : ''}active.svg`}
+				src={`${star < 4 ? startInActive : startActive}`}
 				alt='star de puntuar'
 			/>
 		</div>
